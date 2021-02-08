@@ -55,12 +55,12 @@ h4 {
 }
 
 
-
-
-
 input {
     width: 100%;
 }
+
+/*LAYOUT*/
+
 
 .layout-grid {
     display: grid;
@@ -81,7 +81,6 @@ input {
 .info-grid .title {
     grid-area: title;
     display: block;
-    text-transform: uppercase;
     color: #8f061e;
 }
 
@@ -109,14 +108,23 @@ input {
     font-weight: 700;
 }
 
+/*...FORM LAYOUT*/
+.location-group {
+    display: grid;
+    grid-template-areas: "city city city state county county county";
+    grid-gap: 2rem;
+}
 
+.city { grid-area: city }
+.state { grid-area: state }
+.county { grid-area: county }
 
-/*CUSTOM CHECKBOX*/
-
-
-
-
-
+@media(max-width: 576px){
+    .location-group {
+        grid-template-areas: "city city city" "state state state" "county county county";
+        grid-gap: 1rem;
+    }
+}
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
     .info-grid {
@@ -127,6 +135,7 @@ input {
     .info-grid .icon {
         display: none;
     }
+        
 }
 
 
@@ -153,6 +162,7 @@ input {
 
 .dropdown {
     padding: 1rem;
+    width: 100%;
 }
 
 .initial-style {
