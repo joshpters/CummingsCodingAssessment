@@ -1,1 +1,194 @@
-﻿
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*TEXT STYLES*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.semi-bold {
+    font-weight: 500;
+}
+
+
+/*BACKGROUND COLORS*/
+.light-grey {
+    background-color: #F4F5F5
+}
+
+.light-yellow {
+    background-color: #F9F8F3
+}
+
+.light-green {
+    background-color: #F3F9F8
+}
+
+.light-red {
+    background-color: #F9F3F4;
+}
+
+/*INPUT STYLES*/
+.submit-btn {
+    background-color: #8F061E;
+    color: white;
+    border: 1px solid black;
+}
+
+.submit-btn-small {
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+}
+
+.submit-btn-large {
+    padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+
+
+
+
+input {
+    width: 100%;
+}
+
+.layout-grid {
+    display: grid;
+    grid-gap: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 80px auto auto;
+    grid-template-areas: '. title title' 'icon form form';
+}
+
+.info-grid .icon {
+    grid-area: icon;
+    padding-right: 1rem;
+}
+
+.info-grid .title {
+    grid-area: title;
+    display: block;
+    text-transform: uppercase;
+    color: #8f061e;
+}
+
+.info-grid .form {
+    grid-area: form;
+    padding: 1rem;
+}
+
+.terms-grid {
+    display: grid;
+    grid-template-columns: 80px auto auto;
+    grid-template-areas: 'agree-box terms terms';
+}
+
+.terms-grid .agree-box {
+    grid-area: agree-box;
+    display: flex;
+    justify-content: center;
+}
+
+.terms-grid .terms {
+    border-left: 4px solid #8F061E;
+    padding-left: 1rem;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+
+
+/*CUSTOM CHECKBOX*/
+
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: auto auto auto;
+        grid-template-areas: 'title title title' 'form form form';
+    }
+
+    .info-grid .icon {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.select2-container--classic .select2-selection--single {
+    background-image: none !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+    background-image: none !important;
+}
+
+
+.dropdown {
+    padding: 1rem;
+}
+
+.initial-style {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.initial-style, .initial-style::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+input::placeholder {
+    opacity: 1;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    opacity: 1;
+}
