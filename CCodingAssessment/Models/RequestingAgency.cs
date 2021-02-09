@@ -10,7 +10,7 @@ namespace CCodingAssessment.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string Name { get; set; }
         [Required]
         [Phone]
