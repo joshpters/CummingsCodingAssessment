@@ -25,6 +25,7 @@ namespace CCodingAssessment.Models
 
         [Display(Name = "SSN")]
         [Required(ErrorMessage = "SSN is Required")]
+        
         [RegularExpression(@"^\d{9}|\d{3}-\d{2}-\d{4}$", ErrorMessage = "Invalid SSN")]
         public string SSN { get; set; }
 

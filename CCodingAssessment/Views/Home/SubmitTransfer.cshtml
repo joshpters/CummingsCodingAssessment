@@ -18,41 +18,72 @@
                 <img src="~/icons/company.svg" alt="" />
             </div>
             <div class="form light-grey">
-                <input asp-for="@Model.ProvidingAgency.AgentName" class="initial-style" placeholder="Providing Agent Name" />
-                <span asp-validation-for="@Model.ProvidingAgency.AgentName" class="text-danger"></span>
-
-                <input asp-for="@Model.ProvidingAgency.Date" class="form-control" type="text" placeholder="TODAY" />
-                <span asp-validation-for="@Model.ProvidingAgency.Date" class="text-danger"></span>
-
-                <input asp-for="@Model.ProvidingAgency.Agency" class="initial-style" placeholder="Providing Agency" />
-                <span asp-validation-for="@Model.ProvidingAgency.Agency" class="text-danger"></span>
-
-
-                <input asp-for="@Model.ProvidingAgency.PhoneNumber" value="" class="initial-style" placeholder="Mobile Number" />
-                <span asp-validation-for="@Model.ProvidingAgency.PhoneNumber" class="text-danger"></span>
-
-                <div class="location-group">
-                    <div class="city">
-                        <select asp-for="@Model.ProvidingAgency.City" class="dropdown">
-                            <option value="" disabled selected>City</option>
-                        </select>
-                        <span asp-validation-for="@Model.ProvidingAgency.City" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input asp-for="@Model.ProvidingAgency.AgentName" class="initial-style" placeholder="Providing Agent Name" />
+                            <span asp-validation-for="@Model.ProvidingAgency.AgentName" class="text-danger"></span>
+                        </div>
                     </div>
-                    <div class="state">
-                        <select asp-for="@Model.ProvidingAgency.State" class="dropdown">
-                            <option value="" disabled selected>State</option>
-                        </select>
-                        <span asp-validation-for="@Model.ProvidingAgency.State" class="text-danger"></span>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input asp-for="@Model.ProvidingAgency.Date" type="text" id="date" onfocus="(this.type='date')" class="form-control" placeholder="TODAY" />
+                                <div class="input-group-append" onclick="javascript: document.getElementById('date').focus();">
+                                    <button class="btn btn-outline-secondary dropdown-toggle calendar-container" style="cursor: pointer; " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                            <span asp-validation-for="@Model.ProvidingAgency.Date" class="text-danger"></span>
+                        </div>
                     </div>
-                    <div class="county">
-                        <select asp-for="@Model.ProvidingAgency.County" class="dropdown" name="county">
-                            <option value="" disabled selected>County</option>
-                        </select>
-                        <span asp-validation-for="@Model.ProvidingAgency.County" class="text-danger"></span>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input asp-for="@Model.ProvidingAgency.Agency" class="initial-style" placeholder="Providing Agency" />
+                            <span asp-validation-for="@Model.ProvidingAgency.Agency" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input asp-for="@Model.ProvidingAgency.PhoneNumber" value="" class="initial-style" placeholder="Mobile Number" />
+                            <span asp-validation-for="@Model.ProvidingAgency.PhoneNumber" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-                
-
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <select asp-for="@Model.ProvidingAgency.City" class="dropdown">
+                                <option value="" disabled selected>City</option>
+                                <option value="DemoCity1">DemoCity1</option>
+                                <option value="DemoCity2">DemoCity2</option>
+                            </select>
+                            <span asp-validation-for="@Model.ProvidingAgency.City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select asp-for="@Model.ProvidingAgency.State" class="dropdown">
+                                <option value="" disabled selected>State</option>
+                                <option value="DemoState1">DemoState1</option>
+                                <option value="DemoState2">DemoState2</option>
+                            </select>
+                            <span asp-validation-for="@Model.ProvidingAgency.State" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <select asp-for="@Model.ProvidingAgency.County" class="dropdown">
+                                <option value="" disabled selected>County</option>
+                                <option value="DemoCounty1">DemoCounty1</option>
+                                <option value="DemoCounty2">DemoCounty2</option>
+                            </select>
+                            <span asp-validation-for="@Model.ProvidingAgency.County" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="info-grid">
@@ -63,30 +94,46 @@
                 <img src="~/icons/handcuffs.svg" alt="" />
             </div>
             <div class="form light-yellow">
-
-                <input asp-for="@Model.Jail.Name" placeholder="Jail Name" />
-                <span asp-validation-for="@Model.Jail.Name" class="text-danger"></span>
-
-                <div class="location-group">
-                    <div class="city">
-                        <select asp-for="@Model.Jail.City" class="dropdown">
-                            <option value="" disabled selected>City</option>
-                        </select>
-                        <span asp-validation-for="@Model.Jail.City" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input asp-for="@Model.Jail.Name" placeholder="Jail Name" />
+                            <span asp-validation-for="@Model.Jail.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <div class="city">
+                                <select asp-for="@Model.Jail.City" class="dropdown">
+                                    <option value="" disabled selected>City</option>
+                                    <option value="DemoCity1">DemoCity1</option>
+                                    <option value="DemoCity2">DemoCity2</option>
+                                </select>
+                                <span asp-validation-for="@Model.Jail.City" class="text-danger"></span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="state">
-                        <select asp-for="@Model.Jail.State" class="dropdown">
-                            <option value="" disabled selected>State</option>
-                        </select>
-                        <span asp-validation-for="@Model.Jail.State" class="text-danger"></span>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select asp-for="@Model.Jail.State" class="dropdown">
+                                <option value="" disabled selected>State</option>
+                                <option value="DemoState1">DemoState1</option>
+                                <option value="DemoState2">DemoState2</option>
+                            </select>
+                            <span asp-validation-for="@Model.Jail.State" class="text-danger"></span>
+                        </div>
                     </div>
 
-                    <div class="county">
-                        <select asp-for="@Model.Jail.County" class="dropdown">
-                            <option value="" disabled selected>County</option>
-                        </select>
-                        <span asp-validation-for="@Model.Jail.County" class="text-danger"></span>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <select asp-for="@Model.Jail.County" class="dropdown">
+                                <option value="" disabled selected>County</option>
+                                <option value="DemoCounty1">DemoCounty1</option>
+                                <option value="DemoCounty2">DemoCounty2</option>
+                            </select>
+                            <span asp-validation-for="@Model.Jail.County" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -101,19 +148,26 @@
                 <img src="~/icons/certificate.svg" alt="" />
             </div>
             <div class="form light-grey">
-
-                <input asp-for="@Model.Bond.Amount" placeholder="Bond Amount" />
-                <span asp-validation-for="@Model.Bond.Amount" class="text-danger"></span>
-
-                <select asp-for="@Model.Bond.SerialNumber" class="dropdown">
-                    <option value="" disabled selected>Serial Number</option>
-                    <option value="1">10118500-151084108</option>
-                    <option value="2">10118500-151084108</option>
-                </select>
-                <span asp-validation-for="@Model.Bond.SerialNumber" class="text-danger"></span>
-                
+                <div class="row ">
+                    <div class="col-6">
+                        <div class="d-flex flex-row">
+                            <img src="~/icons/dollar-currency-symbol.svg" alt="" style="width: 2rem;" />
+                            <input asp-for="@Model.Bond.Amount" placeholder="Bond Amount" />
+                        </div>
+                        <span asp-validation-for="@Model.Bond.Amount" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <select asp-for="@Model.Bond.SerialNumber" class="dropdown">
+                                <option value="" disabled selected>Serial Number</option>
+                                <option value="10118500-151084108">10118500-151084108</option>
+                                <option value="10118500-151084108">10118500-151084108</option>
+                            </select>
+                            <span asp-validation-for="@Model.Bond.SerialNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
         <div class="info-grid">
             <div class="title">
@@ -123,33 +177,52 @@
                 <img src="~/icons/suites.svg" alt="" />
             </div>
             <div class="form light-yellow">
-                <input asp-for="@Model.RequestingAgency.Name" placeholder="Requesting Agency" />
-                <span asp-validation-for="@Model.RequestingAgency.Name" class="text-danger"></span>
-
-                <input asp-for="@Model.RequestingAgency.PhoneNumber" placeholder="Mobile Number" />
-                <span asp-validation-for="@Model.RequestingAgency.PhoneNumber" class="text-danger"></span>
-                       
-                <div class="location-group">
-                    <div class="city">
-                        <select asp-for="@Model.RequestingAgency.City" class="dropdown">
-                            <option value="" disabled selected>City</option>
-                        </select>
-                        <span asp-validation-for="@Model.RequestingAgency.City" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <input asp-for="@Model.RequestingAgency.Name" placeholder="Requesting Agency" />
+                            <span asp-validation-for="@Model.RequestingAgency.Name" class="text-danger"></span>
+                        </div>
                     </div>
-                    <div class="state">
-                        <select asp-for="@Model.RequestingAgency.State" class="dropdown" name="state">
-                            <option value="" disabled selected>State</option>
-                        </select>
-                        <span asp-validation-for="@Model.RequestingAgency.State" class="text-danger"></span>
-                    </div>
-                    <div class="county">
-                        <select asp-for="@Model.RequestingAgency.County" class="dropdown" name="county">
-                            <option value="" disabled selected>County</option>
-                        </select>
-                        <span asp-validation-for="@Model.RequestingAgency.County" class="text-danger"></span>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input asp-for="@Model.RequestingAgency.PhoneNumber" placeholder="Mobile Number" />
+                            <span asp-validation-for="@Model.RequestingAgency.PhoneNumber" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <select asp-for="@Model.RequestingAgency.City" class="dropdown">
+                                <option value="" disabled selected>City</option>
+                                <option value="DemoCity1">DemoCity1</option>
+                                <option value="DemoCity2">DemoCity2</option>
+                            </select>
+                            <span asp-validation-for="@Model.RequestingAgency.City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select asp-for="@Model.RequestingAgency.State" class="dropdown">
+                                <option value="" disabled selected>State</option>
+                                <option value="DemoState1">DemoState1</option>
+                                <option value="DemoState2">DemoState2</option>
+                            </select>
+                            <span asp-validation-for="@Model.RequestingAgency.State" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <select asp-for="@Model.RequestingAgency.County" class="dropdown">
+                                <option value="" disabled selected>County</option>
+                                <option value="DemoCounty1">DemoCounty1</option>
+                                <option value="DemoCounty2">DemoCounty2</option>
+                            </select>
+                            <span asp-validation-for="@Model.RequestingAgency.County" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="info-grid">
@@ -160,19 +233,37 @@
                 <img src="~/icons/profile-light-green.svg" alt="" />
             </div>
             <div class="form light-green">
-                <input asp-for="@Model.Defendant.LastName" placeholder="Last" />
-                <span asp-validation-for="@Model.Defendant.LastName" class="text-danger"></span>
-
-                <input asp-for="@Model.Defendant.FirstName" placeholder="First" />
-                <span asp-validation-for="@Model.Defendant.FirstName" class="text-danger"></span>
-
-                <input asp-for="@Model.Defendant.DOB" placeholder="DOB" />
-                <span asp-validation-for="@Model.Defendant.DOB" class="text-danger"></span>
-
-                <input asp-for="@Model.Defendant.SSN" placeholder="SSN" />
-                <span asp-validation-for="@Model.Defendant.SSN" class="text-danger"></span>
-
-                <button class="submit-btn submit-btn-small semi-bold">GO!</button>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <input asp-for="@Model.Defendant.LastName" class="red" placeholder="Smith" />
+                            <span asp-validation-for="@Model.Defendant.LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md pl-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Defendant.FirstName" placeholder="First" />
+                            <span asp-validation-for="@Model.Defendant.FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pl-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Defendant.DOB" type="text" onfocus="(this.type='date')" placeholder="DOB" />
+                            <span asp-validation-for="@Model.Defendant.DOB" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pl-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Defendant.SSN" placeholder="SSN" />
+                            <span asp-validation-for="@Model.Defendant.SSN" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-auto pl-md-0">
+                        <div class="form-group">
+                            <button class="submit-btn submit-btn-small semi-bold">GO!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="info-grid">
@@ -183,64 +274,82 @@
                 <img src="~/icons/profile-light-gold.svg" alt="" />
             </div>
             <div class="form light-yellow">
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.FirstName" placeholder="First Name" />
-                    <span asp-validation-for="@Model.Indemnitor.FirstName" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.FirstName" placeholder="First Name" />
+                            <span asp-validation-for="@Model.Indemnitor.FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pl-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.MiddleName" placeholder="Middle" />
+                            <span asp-validation-for="@Model.Indemnitor.MiddleName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md pl-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.LastName" placeholder="Last Name" />
+                            <span asp-validation-for="@Model.Indemnitor.LastName" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.MiddleName" placeholder="Middle" />
-                    <span asp-validation-for="@Model.Indemnitor.MiddleName" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.AliasName" placeholder="Alias" />
+                            <span asp-validation-for="@Model.Indemnitor.AliasName" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.LastName" placeholder="Last Name" />
-                    <span asp-validation-for="@Model.Indemnitor.LastName" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md-2 pr-md-0">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.DOB" type="text" onfocus="(this.type='date')" placeholder="Date Of Birth" />
+                            <span asp-validation-for="@Model.Indemnitor.DOB" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select asp-for="@Model.Indemnitor.Gender" class="dropdown">
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <span asp-validation-for="@Model.Indemnitor.Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <select asp-for="@Model.Indemnitor.Ethnicity" class="dropdown">
+                                <option value="" disabled selected>Ethnicity</option>
+                                <option value="hispanic">Hispanic or Latino</option>
+                                <option value="nonhispanic">Not Hispanic or Latino</option>
+                            </select>
+                            <span asp-validation-for="@Model.Indemnitor.Ethnicity" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.SSN" placeholder="Social Security" />
+                            <span asp-validation-for="@Model.Indemnitor.SSN" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.AliasName" placeholder="Alias" />
-                    <span asp-validation-for="@Model.Indemnitor.AliasName" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.EmailAddress" placeholder="Email Address" />
+                            <span asp-validation-for="@Model.Indemnitor.EmailAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input asp-for="@Model.Indemnitor.PhoneNumber" placeholder="Mobile Phone" />
+                            <span asp-validation-for="@Model.Indemnitor.PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.DOB" placeholder="Date Of Birth" />
-                    <span asp-validation-for="@Model.Indemnitor.DOB" class="text-danger"></span>
-                </div>
-
-                <div class="grid-group">
-                    <select asp-for="@Model.Indemnitor.Gender" class="dropdown">
-                        <option value="" disabled selected>Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <span asp-validation-for="@Model.Indemnitor.Gender" class="text-danger"></span>
-                </div>
-
-                <div class="grid-group">
-                    <select asp-for="@Model.Indemnitor.Ethnicity" class="dropdown">
-                        <option value="" disabled selected>Ethnicity</option>
-                        <option value="hispanic">Hispanic or Latino</option>
-                        <option value="nonhispanic">Not Hispanic or Latino</option>
-                    </select>
-                    <span asp-validation-for="@Model.Indemnitor.Ethnicity" class="text-danger"></span>
-                </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.SSN" placeholder="Social Security" />
-                    <span asp-validation-for="@Model.Indemnitor.SSN" class="text-danger"></span>
-                </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.EmailAddress" placeholder="Email Address" />
-                    <span asp-validation-for="@Model.Indemnitor.EmailAddress" class="text-danger"></span>
-                </div>
-
-                <div class="grid-group">
-                    <input asp-for="@Model.Indemnitor.PhoneNumber" placeholder="Mobile Phone" />
-                    <span asp-validation-for="@Model.Indemnitor.PhoneNumber" class="text-danger"></span>
-                </div>
-
             </div>
         </div>
         <div class="info-grid">
@@ -251,18 +360,21 @@
                 <img src="~/icons/warning.svg" alt="" />
             </div>
             <div class="form light-red">
-                <input asp-for="@Model.AdditionalInformation" />
-                <span asp-validation-for="@Model.AdditionalInformation" class="text-danger"></span>
-
+                <div class="form-group">
+                    <input asp-for="@Model.AdditionalInformation" />
+                    <span asp-validation-for="@Model.AdditionalInformation" class="text-danger"></span>
+                </div>
             </div>
         </div>
         <div class="terms-grid">
             <div class="agree-box">
                 <label class="custom_checkbox_container">
                     <input type="checkbox" asp-for="@Model.AgreedToTerms" required="required">
-
                     <span class="checkmark"></span>
                 </label>
+                <div class="agree-checkbox-label d-sm-block d-md-none">
+                    I agree to the above terms.
+                </div>
             </div>
             <div class="terms">
                 <p>

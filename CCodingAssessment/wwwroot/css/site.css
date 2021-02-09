@@ -2,7 +2,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-/*TEXT STYLES*/
+/************************TEXT STYLES************************/
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ h4 {
 }
 
 
-/*BACKGROUND COLORS*/
+/************************BACKGROUND COLORS************************/
 .light-grey {
     background-color: #F4F5F5
 }
@@ -38,7 +38,7 @@ h4 {
     background-color: #F9F3F4;
 }
 
-/*INPUT STYLES*/
+/************************INPUT STYLES************************/
 .submit-btn {
     background-color: #8F061E;
     color: white;
@@ -48,6 +48,7 @@ h4 {
 .submit-btn-small {
     border-radius: 5px;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    height: 100%;
 }
 
 .submit-btn-large {
@@ -59,9 +60,93 @@ input {
     width: 100%;
 }
 
-/*LAYOUT*/
+/*SELECT2 STYLES*/
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+    border-left: 1px solid black !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__rendered {
+    color: black !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+    padding-left: 1.8rem !important;
+}
+
+.select2-container--classic .select2-selection--single {
+    background-color: white !important;
+    border: 1px solid black !important;
+}
+
+.select2-container--classic .select2-selection--single {
+    background-image: none !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+    background-image: none !important;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow b {
+    border-color: black transparent transparent transparent !important;
+}
 
 
+.select2-container .select2-selection--single {
+    height: 100% !important;
+}
+
+.select2-selection__arrow {
+    height: calc(100% - 2px) !important;
+}
+
+
+.select2-selection {
+    padding: 0.5rem;
+}
+
+.dropdown {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.input-group input {
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+::-webkit-input-placeholder {
+    color: black !important;
+}
+
+.red::-webkit-input-placeholder {
+    color: #8f061e !important;
+    font-weight: 700;
+}
+
+.bold::-webkit-input-placeholder {
+    font-weight: bold !important;
+}
+
+.calendar-container {
+    background-color: lightgrey !important
+}
+
+.calendar-container i {
+    color: black !important;
+}
+
+/************************LAYOUT************************/
 .layout-grid {
     display: grid;
     grid-gap: 2rem;
@@ -87,6 +172,7 @@ input {
 .info-grid .form {
     grid-area: form;
     padding: 1rem;
+    padding-bottom: 0;
 }
 
 .terms-grid {
@@ -108,7 +194,23 @@ input {
     font-weight: 700;
 }
 
+@media (max-width: 768px){
+    .terms-grid {
+        grid-template-columns: auto;
+        grid-template-areas:
+            "terms"
+            "agree-box";
+    }
+}
+
 /*...FORM LAYOUT*/
+.eighty-twenty-grid {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
 .location-group {
     display: grid;
     grid-template-areas: "city city city state county county county";
@@ -124,8 +226,11 @@ input {
         grid-template-areas: "city city city" "state state state" "county county county";
         grid-gap: 1rem;
     }
+    .eighty-twenty-grid {
+        grid-template-columns: 1fr;
+    }
 }
-/* Medium devices (tablets, 768px and up) */
+
 @media (max-width: 768px) {
     .info-grid {
         grid-template-columns: auto auto auto;
@@ -136,69 +241,4 @@ input {
         display: none;
     }
         
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.select2-container--classic .select2-selection--single {
-    background-image: none !important;
-}
-
-.select2-container--classic .select2-selection--single .select2-selection__arrow {
-    background-image: none !important;
-}
-
-
-.dropdown {
-    padding: 1rem;
-    width: 100%;
-}
-
-.initial-style {
-    border: 1px solid black;
-    padding: 0.5rem;
-}
-
-.initial-style, .initial-style::placeholder {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-}
-
-input::placeholder {
-    opacity: 1;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    opacity: 1;
-}
-
-::-moz-placeholder { /* Firefox 19+ */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    opacity: 1;
-}
-
-:-ms-input-placeholder { /* IE 10+ */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    opacity: 1;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    opacity: 1;
 }

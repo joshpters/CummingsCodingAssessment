@@ -9,9 +9,11 @@ namespace CCodingAssessment.Models
     public class Bond
     {
         public int Id { get; set; }
+        [Required]
         public decimal Amount { get; set; }
         [Required]
         [MaxLength(50)]
+        [Display(Name = "Serial Number")]
         public string SerialNumber { get; set; }
     }
 }

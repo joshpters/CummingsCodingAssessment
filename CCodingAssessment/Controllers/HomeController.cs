@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CCodingAssessment.Data;
 using CCodingAssessment.Models;
+using CCodingAssessment.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -39,7 +40,7 @@ namespace CCodingAssessment.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitTransfer(Transfer transfer)
+        public async Task<IActionResult> SubmitTransfer(TransferViewModel transfer)
         {
             if (ModelState.IsValid)
             {
@@ -56,12 +57,12 @@ namespace CCodingAssessment.Controllers
                 _context.Transfers.Add(new Transfer
                 {
                     AdditionalInformation = transfer.AdditionalInformation,
-                    BondId = transfer.BondId,
-                    DefendantId = transfer.DefendantId,
-                    IndemnitorId = transfer.IndemnitorId,
-                    RequestingAgencyId = transfer.RequestingAgencyId,
-                    ProvidingAgencyId = transfer.ProvidingAgencyId,
-                    JailId = transfer.JailId
+                    BondId = transfer.Bond.Id,
+                    DefendantId = transfer.Defendant.Id,
+                    IndemnitorId = transfer.Indemnitor.Id,
+                    RequestingAgencyId = transfer.RequestingAgency.Id,
+                    ProvidingAgencyId = transfer.ProvidingAgency.Id,
+                    JailId = transfer.Jail.Id
                 });
 
                 await _context.SaveChangesAsync();
