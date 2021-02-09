@@ -149,14 +149,16 @@
             </div>
             <div class="form light-grey">
                 <div class="row ">
-                    <div class="col-6">
-                        <div class="d-flex flex-row">
-                            <img src="~/icons/dollar-currency-symbol.svg" alt="" style="width: 2rem;" />
-                            <input asp-for="@Model.Bond.Amount" placeholder="Bond Amount" />
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="d-flex flex-row">
+                                <img src="~/icons/dollar-currency-symbol.svg" alt="" style="width: 2rem;" class="d-md-inline d-none"/>
+                                <input asp-for="@Model.Bond.Amount" placeholder="Bond Amount" />
+                            </div>
+                            <span asp-validation-for="@Model.Bond.Amount" class="text-danger"></span>
                         </div>
-                        <span asp-validation-for="@Model.Bond.Amount" class="text-danger"></span>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <select asp-for="@Model.Bond.SerialNumber" class="dropdown">
                                 <option value="" disabled selected>Serial Number</option>
