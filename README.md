@@ -1,2 +1,3 @@
-# CummingsCodingAssessment
+# CodingAssessment
  
+![Screenshot](screenshot.JPG)
